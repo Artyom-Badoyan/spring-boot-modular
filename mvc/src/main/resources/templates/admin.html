@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+        }
+        header {
+            background-color: #4a90e2;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #0056b3;
+        }
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #4a90e2;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        h1 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #e3f2fd;
+            color: #0277bd;
+            border: 1px solid #b3e5fc;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .logout-button {
+            background-color: #e53935;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        .logout-button:hover {
+            background-color: #c62828;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome Admin</h1>
+</header>
+<nav>
+    <ul>
+        <li><a th:href="@{/admin/users}">Manage Users</a></li>
+    </ul>
+</nav>
+<div th:if="${message}" class="container">
+    <div class="message">
+        <p th:text="${message}"></p>
+    </div>
+</div>
+</body>
+</html>
